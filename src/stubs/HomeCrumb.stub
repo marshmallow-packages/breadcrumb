@@ -1,0 +1,17 @@
+<?php
+
+namespace App\Breadcrumbs;
+
+use Marshmallow\Breadcrumb\Crumb;
+
+class HomeBreadcrumb extends Crumb
+{
+	public function __construct ()
+	{
+		$this
+				->setIconClass('fas fa-home')
+				->setUrl('/')
+				->setName('Home')
+				->isCurrent(true);
+	}
+}

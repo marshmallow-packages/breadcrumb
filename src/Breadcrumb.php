@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace Marshmallow\Breadcrumb;
 
@@ -9,7 +9,7 @@ class Breadcrumb
 {
 	protected $crumbs = [];
 
-	public function __construct (array $config = [])
+	public function __construct(array $config = [])
 	{
 		if (isset($config['default']) && is_array($config['default'])) {
 			foreach ($config['default'] as $crumb) {
@@ -18,26 +18,26 @@ class Breadcrumb
 		}
 	}
 
-	public function addCrumbs (array $crumbs): void
+	public function addCrumbs(array $crumbs): void
 	{
 		foreach ($crumbs as $crumb) {
 			$this->addCrumb($crumb);
 		}
 	}
 
-	public function addCrumb (Crumb $crumb): void
+	public function addCrumb(Crumb $crumb): void
 	{
 		$this->crumbs[] = $crumb;
 	}
 
-	protected function getCollection (): Collection
+	protected function getCollection(): Collection
 	{
 		return collect(
 			$this->crumbs
 		);
 	}
 
-	public function generate ()
+	public function generate()
 	{
 		return view('marshmallow::breadcrumb.container')->with([
 			'breadcrumb' => $this->getCollection(),

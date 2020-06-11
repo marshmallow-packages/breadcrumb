@@ -1,9 +1,9 @@
 <?php
 
-namespace Marshmallow\Breadcrumb\App\Console\Commands;
+namespace Marshmallow\Breadcrumb\Console\Commands;
+
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Artisan;
-use Marshmallow\Breadcrumb\App\Console\Commands\Traits\BreadcrumbCommand;
+use Marshmallow\Breadcrumb\Console\Commands\Traits\BreadcrumbCommand;
 
 class CreateCrumbCommand extends Command
 {
@@ -37,7 +37,7 @@ class CreateCrumbCommand extends Command
         if (file_exists($breadcrumb_class)) {
             $this->error($this->argument('name') . ' already exists.');
         }
-        
+
         $stub = $this->getStub('Crumb');
         $stub = str_replace('{{crumbname}}', $this->argument('name'), $stub);
         file_put_contents($breadcrumb_class, $stub);

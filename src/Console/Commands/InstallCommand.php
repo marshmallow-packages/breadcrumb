@@ -1,10 +1,10 @@
 <?php
 
-namespace Marshmallow\Breadcrumb\App\Console\Commands;
-use App\User;
+namespace Marshmallow\Breadcrumb\Console\Commands;
+
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Artisan;
-use Marshmallow\Breadcrumb\App\Console\Commands\Traits\BreadcrumbCommand;
+use Marshmallow\Breadcrumb\Console\Commands\Traits\BreadcrumbCommand;
 
 class InstallCommand extends Command
 {
@@ -52,7 +52,7 @@ class InstallCommand extends Command
         $this->info('Installation is done :).');
     }
 
-    private function makeHomeBreadcrumbClass ()
+    private function makeHomeBreadcrumbClass()
     {
         $class_name = 'HomeBreadcrumb.php';
         $home_breadcrumb = $this->getCrumbClassPath() . '/' . $class_name;
@@ -61,7 +61,7 @@ class InstallCommand extends Command
                 return;
             }
         }
-        
+
         file_put_contents($home_breadcrumb, $this->getStub('HomeCrumb'));
     }
 }

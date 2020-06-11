@@ -2,9 +2,10 @@
 
 namespace Marshmallow\Breadcrumb;
 
+use Marshmallow\Breadcrumb\Breadcrumb;
 use Illuminate\Support\ServiceProvider;
-use Marshmallow\Breadcrumb\App\Console\Commands\InstallCommand;
-use Marshmallow\Breadcrumb\App\Console\Commands\CreateCrumbCommand;
+use Marshmallow\Breadcrumb\Console\Commands\InstallCommand;
+use Marshmallow\Breadcrumb\Console\Commands\CreateCrumbCommand;
 
 class BreadcrumbServiceProvider extends ServiceProvider
 {
@@ -15,8 +16,6 @@ class BreadcrumbServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        // $this->loadViewsFrom(__DIR__.'/views/breadcrumb', 'breadcrumb');
-
         $this->app->singleton(Breadcrumb::class, function ($app) {
             return new Breadcrumb(config('breadcrumb'));
         });
@@ -32,10 +31,10 @@ class BreadcrumbServiceProvider extends ServiceProvider
         /**
          * Views
          */
-        $this->loadViewsFrom(__DIR__.'/views', 'marshmallow');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'marshmallow');
 
         $this->publishes([
-            __DIR__.'/views' => resource_path('views/vendor/marshmallow'),
+            __DIR__.'/../resources/views' => resource_path('views/vendor/marshmallow'),
         ]);
 
 
@@ -43,7 +42,7 @@ class BreadcrumbServiceProvider extends ServiceProvider
          * Config
          */
         $this->publishes([
-            __DIR__.'/config/breadcrumb.php' => config_path('breadcrumb.php')
+            __DIR__.'/../config/breadcrumb.php' => config_path('breadcrumb.php')
         ], 'config');
 
         if ($this->app->runningInConsole()) {

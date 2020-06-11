@@ -1,8 +1,10 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 $prefix = (config('statistics.prefix')) ? config('statistics.prefix') : 'statistics';
 
-Route::group(['prefix' => $prefix, 'middleware' => ['web'], 'namespace' => 'Marshmallow\Statistics\App\Http'], function(){
+Route::group(['prefix' => $prefix, 'middleware' => ['web'], 'namespace' => 'Marshmallow\Statistics\App\Http'], function () {
 	Route::get('/demo/toplist', 'Statistics\Controllers\StatisticsController@toplist')->middleware('auth.basic');
 	Route::get('/demo/timer', 'Statistics\Controllers\StatisticsController@timer')->middleware('auth.basic');
 	Route::get('/demo/piechart', 'Statistics\Controllers\StatisticsController@piechart')->middleware('auth.basic');

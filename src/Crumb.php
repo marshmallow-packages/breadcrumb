@@ -4,53 +4,61 @@ namespace Marshmallow\Breadcrumb;
 
 class Crumb
 {
-	protected $name;
-	protected $iconClass;
-	protected $url;
-	protected $current = false;
+    protected $name;
 
-	public function setName($name)
-	{
-		$this->name = $name;
-		return $this;
-	}
+    protected $iconClass;
 
-	public function setIconClass($iconClass)
-	{
-		$this->iconClass = $iconClass;
-		return $this;
-	}
+    protected $url;
 
-	public function setRoute($route, $params = [])
-	{
-		$this->url = route($route, $params);
-		return $this;
-	}
+    protected $current = false;
 
-	public function setUrl($url)
-	{
-		$this->url = $url;
-		return $this;
-	}
+    public function setName($name)
+    {
+        $this->name = $name;
 
-	public function isCurrent()
-	{
-		$this->current = true;
-		return $this;
-	}
+        return $this;
+    }
 
-	public function hasLink()
-	{
-		return ($this->url);
-	}
+    public function setIconClass($iconClass)
+    {
+        $this->iconClass = $iconClass;
 
-	public function hasIcon()
-	{
-		return ($this->iconClass);
-	}
+        return $this;
+    }
 
-	public function __get($param)
-	{
-		return $this->{$param};
-	}
+    public function setRoute($route, $params = [])
+    {
+        $this->url = route($route, $params);
+
+        return $this;
+    }
+
+    public function setUrl($url)
+    {
+        $this->url = $url;
+
+        return $this;
+    }
+
+    public function isCurrent()
+    {
+        $this->current = true;
+
+        return $this;
+    }
+
+    public function hasLink()
+    {
+        return ($this->url);
+    }
+
+    public function hasIcon()
+    {
+        return ($this->iconClass);
+    }
+
+    public function __get($param)
+    {
+        return $this->{$param};
+    }
 }

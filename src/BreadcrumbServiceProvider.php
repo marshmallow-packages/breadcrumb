@@ -2,10 +2,9 @@
 
 namespace Marshmallow\Breadcrumb;
 
-use Marshmallow\Breadcrumb\Breadcrumb;
 use Illuminate\Support\ServiceProvider;
-use Marshmallow\Breadcrumb\Console\Commands\InstallCommand;
 use Marshmallow\Breadcrumb\Console\Commands\CreateCrumbCommand;
+use Marshmallow\Breadcrumb\Console\Commands\InstallCommand;
 
 class BreadcrumbServiceProvider extends ServiceProvider
 {
@@ -42,7 +41,7 @@ class BreadcrumbServiceProvider extends ServiceProvider
          * Config
          */
         $this->publishes([
-            __DIR__.'/../config/breadcrumb.php' => config_path('breadcrumb.php')
+            __DIR__.'/../config/breadcrumb.php' => config_path('breadcrumb.php'),
         ], 'config');
 
         if ($this->app->runningInConsole()) {

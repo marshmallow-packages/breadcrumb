@@ -7,7 +7,7 @@ use Marshmallow\Breadcrumb\Console\Commands\Traits\BreadcrumbCommand;
 
 class CreateCrumbCommand extends Command
 {
-	use BreadcrumbCommand;
+    use BreadcrumbCommand;
 
     /**
      * The name and signature of the console command.

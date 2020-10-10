@@ -9,6 +9,7 @@ use Marshmallow\Breadcrumb\Console\Commands\Traits\BreadcrumbCommand;
 class InstallCommand extends Command
 {
     use BreadcrumbCommand;
+
     /**
      * The name and signature of the console command.
      *
@@ -57,7 +58,7 @@ class InstallCommand extends Command
         $class_name = 'HomeBreadcrumb.php';
         $home_breadcrumb = $this->getCrumbClassPath() . '/' . $class_name;
         if (file_exists($home_breadcrumb)) {
-            if (!$this->confirm('HomeBreadcrumb bestaat al, wil je deze opnieuw aanmaken? [yes|no]')) {
+            if (! $this->confirm('HomeBreadcrumb bestaat al, wil je deze opnieuw aanmaken? [yes|no]')) {
                 return;
             }
         }

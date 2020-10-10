@@ -4,9 +4,9 @@ namespace Marshmallow\Breadcrumb\Console\Commands\Traits;
 
 trait BreadcrumbCommand
 {
-	protected function makeBreadcrumbFolder()
+    protected function makeBreadcrumbFolder()
     {
-        if (!file_exists($this->getCrumbClassPath())) {
+        if (! file_exists($this->getCrumbClassPath())) {
             mkdir($this->getCrumbClassPath());
         }
     }

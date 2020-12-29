@@ -9,6 +9,15 @@ class Crumb
 	protected $url;
 	protected $current = false;
 
+    public static function make($name, $route)
+    {
+        $crumb = new self;
+        $crumb->setName($name)
+              ->setUrl($route);
+
+        return $crumb;
+    }
+
 	public function setName($name)
 	{
 		$this->name = $name;
@@ -23,7 +32,9 @@ class Crumb
 
 	public function setRoute($route, $params = [])
 	{
-		$this->url = route($route, $params);
+		$this->url = $this->setUrl(
+            route($route, $params)
+        );
 		return $this;
 	}
 

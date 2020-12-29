@@ -3,14 +3,18 @@
 return [
 
 	'default' => [
-		new \App\Breadcrumbs\HomeBreadcrumb,
+        'name' => 'Home',
+        'url' => env('APP_URL'),
+        'icon' => 'fas fa-home',
 	],
+
+    'view' => 'marshmallow::breadcrumb.container',
 
 	'classes' => [
 		'container' => 'breadcrumb-container',
 		'list' => 'breadcrumb-list',
-		'item' => 'breadcrumb-item-class',
-		'link' => 'breadcrumb-link-class',
-		'icon' => 'breadcrumb-icon-class',
+		'item' => 'breadcrumb-item',
+		'link' => 'breadcrumb-link',
+		'icon' => 'breadcrumb-icon',
 	],
 ];

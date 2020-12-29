@@ -3,8 +3,6 @@
 namespace Marshmallow\Breadcrumb;
 
 use Illuminate\Support\ServiceProvider;
-use Marshmallow\Breadcrumb\Console\Commands\CreateCrumbCommand;
-use Marshmallow\Breadcrumb\Console\Commands\InstallCommand;
 
 class BreadcrumbServiceProvider extends ServiceProvider
 {
@@ -16,7 +14,8 @@ class BreadcrumbServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(
-            __DIR__.'/../config/breadcrumb.php', 'breadcrumb'
+            __DIR__.'/../config/breadcrumb.php',
+            'breadcrumb'
         );
 
         $this->app->singleton(Breadcrumb::class, function () {
@@ -26,6 +25,7 @@ class BreadcrumbServiceProvider extends ServiceProvider
                 config('breadcrumb.default.url'),
                 config('breadcrumb.default.icon')
             );
+
             return $breadcrumb;
         });
     }

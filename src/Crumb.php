@@ -4,10 +4,13 @@ namespace Marshmallow\Breadcrumb;
 
 class Crumb
 {
-	protected $name;
-	protected $iconClass;
-	protected $url;
-	protected $current = false;
+    protected $name;
+
+    protected $iconClass;
+
+    protected $url;
+
+    protected $current = false;
 
     public static function make($name, $route)
     {
@@ -18,50 +21,55 @@ class Crumb
         return $crumb;
     }
 
-	public function setName($name)
-	{
-		$this->name = $name;
-		return $this;
-	}
+    public function setName($name)
+    {
+        $this->name = $name;
 
-	public function setIconClass($iconClass)
-	{
-		$this->iconClass = $iconClass;
-		return $this;
-	}
+        return $this;
+    }
 
-	public function setRoute($route, $params = [])
-	{
-		$this->url = $this->setUrl(
+    public function setIconClass($iconClass)
+    {
+        $this->iconClass = $iconClass;
+
+        return $this;
+    }
+
+    public function setRoute($route, $params = [])
+    {
+        $this->url = $this->setUrl(
             route($route, $params)
         );
-		return $this;
-	}
 
-	public function setUrl($url)
-	{
-		$this->url = $url;
-		return $this;
-	}
+        return $this;
+    }
 
-	public function isCurrent()
-	{
-		$this->current = true;
-		return $this;
-	}
+    public function setUrl($url)
+    {
+        $this->url = $url;
 
-	public function hasLink()
-	{
-		return ($this->url);
-	}
+        return $this;
+    }
 
-	public function hasIcon()
-	{
-		return ($this->iconClass);
-	}
+    public function isCurrent()
+    {
+        $this->current = true;
 
-	public function __get($param)
-	{
-		return $this->{$param};
-	}
+        return $this;
+    }
+
+    public function hasLink()
+    {
+        return ($this->url);
+    }
+
+    public function hasIcon()
+    {
+        return ($this->iconClass);
+    }
+
+    public function __get($param)
+    {
+        return $this->{$param};
+    }
 }

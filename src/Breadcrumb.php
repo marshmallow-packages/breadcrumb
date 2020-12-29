@@ -8,7 +8,7 @@ use Marshmallow\Seoable\Helpers\Schemas\SchemaListItem;
 
 class Breadcrumb
 {
-	protected $crumbs = [];
+    protected $crumbs = [];
 
     public function add($name, $url, $icon = null)
     {
@@ -20,15 +20,15 @@ class Breadcrumb
         $this->addCrumb($crumb);
     }
 
-	public function addCrumbs(array $crumbs): void
-	{
-		foreach ($crumbs as $crumb) {
-			$this->addCrumb($crumb);
-		}
-	}
+    public function addCrumbs(array $crumbs): void
+    {
+        foreach ($crumbs as $crumb) {
+            $this->addCrumb($crumb);
+        }
+    }
 
-	public function addCrumb(Crumb $crumb): void
-	{
+    public function addCrumb(Crumb $crumb): void
+    {
         if (class_exists(Seo::class)) {
 
             /**
@@ -44,23 +44,23 @@ class Breadcrumb
          * Add this to the crumbs array so we can output
          * this in the breadcrumb view template.
          */
-		$this->crumbs[] = $crumb;
-	}
+        $this->crumbs[] = $crumb;
+    }
 
-	protected function getCollection(): Collection
-	{
-		return collect(
-			$this->crumbs
-		);
-	}
+    protected function getCollection(): Collection
+    {
+        return collect(
+            $this->crumbs
+        );
+    }
 
-	public function generate()
-	{
-		return view(config('breadcrumb.view'))->with([
-			'breadcrumb' => $this->getCollection(),
-			'config' => collect(
-				config('breadcrumb')
-			),
-		]);
-	}
+    public function generate()
+    {
+        return view(config('breadcrumb.view'))->with([
+            'breadcrumb' => $this->getCollection(),
+            'config' => collect(
+                config('breadcrumb')
+            ),
+        ]);
+    }
 }

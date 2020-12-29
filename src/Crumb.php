@@ -2,6 +2,8 @@
 
 namespace Marshmallow\Breadcrumb;
 
+use Marshmallow\HelperFunctions\Facades\URL;
+
 class Crumb
 {
     protected $name;
@@ -47,6 +49,10 @@ class Crumb
     public function setUrl($url)
     {
         $this->url = $url;
+
+        if (URL::isCurrent($url)) {
+            $this->isCurrent();
+        }
 
         return $this;
     }

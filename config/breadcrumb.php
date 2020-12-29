@@ -16,5 +16,7 @@ return [
 		'item' => 'breadcrumb-item',
 		'link' => 'breadcrumb-link',
 		'icon' => 'breadcrumb-icon',
+        'active_item' => 'active-item',
+        'active_link' => 'active-link',
 	],
 ];

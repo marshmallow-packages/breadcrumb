@@ -2,7 +2,6 @@
 
 namespace Marshmallow\Breadcrumb;
 
-use Marshmallow\Breadcrumb\Crumb;
 use Illuminate\Support\Collection;
 use Marshmallow\Seoable\Facades\Seo;
 use Marshmallow\Seoable\Helpers\Schemas\SchemaListItem;

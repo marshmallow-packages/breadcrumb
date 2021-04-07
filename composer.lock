@@ -1,0 +1,75 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "658904cf5ae6ce8ad4f4510afaf0d520",
+    "packages": [
+        {
+            "name": "marshmallow/commands",
+            "version": "v1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/marshmallow-packages/commands.git",
+                "reference": "2928446c1fac42e1a15bb62251e7fcd55fe97f91"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/marshmallow-packages/commands/zipball/2928446c1fac42e1a15bb62251e7fcd55fe97f91",
+                "reference": "2928446c1fac42e1a15bb62251e7fcd55fe97f91",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Marshmallow\\Commands\\CommandsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Marshmallow\\Commands\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Stef",
+                    "email": "stef@marshmallow.dev",
+                    "homepage": "https://marshmallow.dev",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Verschillende handige commands.",
+            "homepage": "https://marshmallow.dev/",
+            "keywords": [
+                "marshmallow"
+            ],
+            "support": {
+                "email": "stef@marshmallow.dev",
+                "issues": "https://github.com/marshmallow-packages/commands/issues",
+                "source": "https://github.com/marshmallow-packages/commands/tree/v1.2.0"
+            },
+            "time": "2021-01-20T16:36:59+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": "^7.0|^8.0"
+    },
+    "platform-dev": [],
+    "plugin-api-version": "2.0.0"
+}

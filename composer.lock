@@ -8,20 +8,20 @@
     "packages": [
         {
             "name": "marshmallow/commands",
-            "version": "v1.2.0",
+            "version": "v1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/marshmallow-packages/commands.git",
-                "reference": "2928446c1fac42e1a15bb62251e7fcd55fe97f91"
+                "reference": "7006acf51ce19895c1d5f779d3b6b98836421119"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/marshmallow-packages/commands/zipball/2928446c1fac42e1a15bb62251e7fcd55fe97f91",
-                "reference": "2928446c1fac42e1a15bb62251e7fcd55fe97f91",
+                "url": "https://api.github.com/repos/marshmallow-packages/commands/zipball/7006acf51ce19895c1d5f779d3b6b98836421119",
+                "reference": "7006acf51ce19895c1d5f779d3b6b98836421119",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.0.0"
+                "php": "^7.0|^8.0"
             },
             "type": "library",
             "extra": {
@@ -56,9 +56,9 @@
             "support": {
                 "email": "stef@marshmallow.dev",
                 "issues": "https://github.com/marshmallow-packages/commands/issues",
-                "source": "https://github.com/marshmallow-packages/commands/tree/v1.2.0"
+                "source": "https://github.com/marshmallow-packages/commands/tree/v1.2.1"
             },
-            "time": "2021-01-20T16:36:59+00:00"
+            "time": "2021-04-07T10:51:20+00:00"
         }
     ],
     "packages-dev": [],

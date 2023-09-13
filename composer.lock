@@ -4,25 +4,26 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "658904cf5ae6ce8ad4f4510afaf0d520",
+    "content-hash": "093cf1b22247b13e9aa634cc468e1ad3",
     "packages": [
         {
             "name": "marshmallow/commands",
-            "version": "v1.2.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/marshmallow-packages/commands.git",
-                "reference": "7006acf51ce19895c1d5f779d3b6b98836421119"
+                "reference": "1ef8ad3209b44f0fb548b111fea75dc4716fad28"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/marshmallow-packages/commands/zipball/7006acf51ce19895c1d5f779d3b6b98836421119",
-                "reference": "7006acf51ce19895c1d5f779d3b6b98836421119",
+                "url": "https://api.github.com/repos/marshmallow-packages/commands/zipball/1ef8ad3209b44f0fb548b111fea75dc4716fad28",
+                "reference": "1ef8ad3209b44f0fb548b111fea75dc4716fad28",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.0|^8.0"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -56,20 +57,22 @@
             "support": {
                 "email": "stef@marshmallow.dev",
                 "issues": "https://github.com/marshmallow-packages/commands/issues",
-                "source": "https://github.com/marshmallow-packages/commands/tree/v1.2.1"
+                "source": "https://github.com/marshmallow-packages/commands/tree/master"
             },
-            "time": "2021-04-07T10:51:20+00:00"
+            "time": "2021-04-07T11:56:39+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "marshmallow/commands": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
         "php": "^7.0|^8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.3.0"
 }
